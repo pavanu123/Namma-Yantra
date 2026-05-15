@@ -127,13 +127,6 @@ Manage Requests (Owner)
 Login as Owner → Click "Rental Requests"
 View pending requests → Accept or Decline
 
-📸 Screenshots
-Login Screen	 <img width="316" height="560" alt="image" src="https://github.com/user-attachments/assets/ab585b6c-1773-446b-b260-ab8ae7a91193" />
- Farmer Dashboard	Browse Equipment
-(Add screenshot)	(Add screenshot)	(Add screenshot)
-Add Equipment	Rental Requests	My Requests
-(Add screenshot)	(Add screenshot)	(Add screenshot)
-🔗 Demo / Live Links
 GitHub Repository: https://github.com/pavanu123/Namma-Yantra
 
 APK Download: [Download Namma-Yantra APK](https://storage.googleapis.com/nammayantra-apk/app-release.apk)
@@ -141,23 +134,17 @@ APK Download: [Download Namma-Yantra APK](https://storage.googleapis.com/nammaya
 📊 Future Enhancements
 Version 2.0
 Push Notifications
-
 UPI Payments Integration
-
 Multilingual Support (Kannada, Hindi)
-
 Ratings & Reviews System
 
 Version 3.0
 AI-based Pricing Suggestions
-
 In-App Chat between farmers and owners
 
 Version 4.0
 IoT Equipment Tracking
-
 Insurance Module
-
 Web Portal for Management
 
 👨‍💻 Developer
@@ -170,7 +157,6 @@ Email	:pavanumesh221@gmail.com
 Team MindMatrix for project evaluation guidance
 
 Firebase for backend services
-
 JetBrains for Kotlin and Android Studio
 
 📝 License
