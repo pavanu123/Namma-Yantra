@@ -94,7 +94,7 @@ text
    cd Namma-Yantra
 Open in Android Studio
 
-Open Android Studio
+*Open Android Studio
 
 Select "Open an Existing Project"
 
@@ -157,7 +157,7 @@ Add Equipment	Rental Requests	My Requests
 🔗 Demo / Live Links
 GitHub Repository: https://github.com/pavanu123/Namma-Yantra
 
-APK Download: Download Namma-Yantra APK
+APK Download: [Download Namma-Yantra APK](https://storage.googleapis.com/nammayantra-apk/app-release.apk)
 
 📊 Future Enhancements
 Version 2.0
