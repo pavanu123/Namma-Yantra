@@ -92,65 +92,44 @@ text
    ```bash
    git clone https://github.com/pavanu123/Namma-Yantra.git
    cd Namma-Yantra
-Open in Android Studio
+2.Open in Android Studio
 
 *Open Android Studio
-
 Select "Open an Existing Project"
-
 Choose the cloned NammaYantra folder
-
 Sync Gradle
-
 Click "Sync Now" when prompted
-
 Wait for dependencies to download
-
 Add Firebase Configuration
-
 Download google-services.json from Firebase Console
-
 Place it in the app/ folder
-
 Build and Run
-
 Connect an Android device or start an emulator
-
 Click the Run button (green triangle)
 
 📱 How to Use
 Register as Farmer
 Open the app → Click "REGISTER HERE"
-
 Fill your details (name, email, phone, village, district)
-
 Select "Farmer" as role
-
 Click "REGISTER"
-
 Register as Owner
 Follow same steps but select "Equipment Owner"
-
 After login, click "Add New Equipment"
-
 Fill equipment details (name, type, rates, location)
-
 Click "ADD EQUIPMENT"
 
 Send Rental Request (Farmer)
 Login as Farmer → Click "Browse Available Equipment"
-
 Select any equipment → Click "Request Rent"
-
 Owner will receive your request
-
 Manage Requests (Owner)
 Login as Owner → Click "Rental Requests"
-
 View pending requests → Accept or Decline
 
 📸 Screenshots
-Login Screen	Farmer Dashboard	Browse Equipment
+Login Screen	 <img width="316" height="560" alt="image" src="https://github.com/user-attachments/assets/ab585b6c-1773-446b-b260-ab8ae7a91193" />
+ Farmer Dashboard	Browse Equipment
 (Add screenshot)	(Add screenshot)	(Add screenshot)
 Add Equipment	Rental Requests	My Requests
 (Add screenshot)	(Add screenshot)	(Add screenshot)
