@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "478432128771",
+    "project_id": "nammayantra-f0bc4",
+    "storage_bucket": "nammayantra-f0bc4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:478432128771:android:6e3634b25ecde6111d8336",
+        "android_client_info": {
+          "package_name": "com.nammayantra"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuRqra7NRZNHqljz_o9A2SpOxku2nBAjU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

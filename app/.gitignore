@@ -1,0 +1,18 @@
+# Android generated
+*.iml
+.gradle/
+.idea/
+build/
+app/build/
+local.properties
+.DS_Store
+captures/
+.externalNativeBuild
+.cxx/
+
+# Keystore files (IMPORTANT: don't upload your keystore!)
+*.jks
+*.keystore
+
+# OS generated files
+Thumbs.db

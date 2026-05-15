@@ -1,0 +1,878 @@
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| employee           |
+| information_schema |
+| myntra             |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| university         |
+| world              |
++--------------------+
+9 rows in set (0.06 sec)
+
+mysql> use myntra;
+Database changed
+mysql> select upper("mysql");
++----------------+
+| upper("mysql") |
++----------------+
+| MYSQL          |
++----------------+
+1 row in set (0.00 sec)
+
+mysql> select upper("mysql") from dual ;
++----------------+
+| upper("mysql") |
++----------------+
+| MYSQL          |
++----------------+
+1 row in set (0.00 sec)
+
+mysql> dual is dummy table in sql
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'dual is dummy table in sql' at line 1
+mysql> select lower ("MINE");
++----------------+
+| lower ("MINE") |
++----------------+
+| mine           |
++----------------+
+1 row in set (0.00 sec)
+
+mysql> select lower ("mine");
++----------------+
+| lower ("mine") |
++----------------+
+| mine           |
++----------------+
+1 row in set (0.00 sec)
+
+mysql> select concat ("hello","world") from dual;
++--------------------------+
+| concat ("hello","world") |
++--------------------------+
+| helloworld               |
++--------------------------+
+1 row in set (0.00 sec)
+
+mysql> select concat ("hello","world","MYSql") from dual;
++----------------------------------+
+| concat ("hello","world","MYSql") |
++----------------------------------+
+| helloworldMYSql                  |
++----------------------------------+
+1 row in set (0.00 sec)
+
+mysql> select length("helloworld");
++----------------------+
+| length("helloworld") |
++----------------------+
+|                   10 |
++----------------------+
+1 row in set (0.00 sec)
+
+mysql> select length(concat ("hello","world","MYSql")) from dual;
++------------------------------------------+
+| length(concat ("hello","world","MYSql")) |
++------------------------------------------+
+|                                       15 |
++------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> select upper(concat ("hello","world","MYSql")) from dual;
++-----------------------------------------+
+| upper(concat ("hello","world","MYSql")) |
++-----------------------------------------+
+| HELLOWORLDMYSQL                         |
++-----------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> select lower(concat ("hello","world","MYSql")) from dual;
++-----------------------------------------+
+| lower(concat ("hello","world","MYSql")) |
++-----------------------------------------+
+| helloworldmysql                         |
++-----------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> select concat (upper("hello"),"world",upper("MYSql")) from dual;
++------------------------------------------------+
+| concat (upper("hello"),"world",upper("MYSql")) |
++------------------------------------------------+
+| HELLOworldMYSQL                                |
++------------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> select concat (upper("hello")," world",upper(" MYSql")) from dual;
++--------------------------------------------------+
+| concat (upper("hello")," world",upper(" MYSql")) |
++--------------------------------------------------+
+| HELLO world MYSQL                                |
++--------------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> select length(concat (upper("hello"),"world",upper("MYSql"))) from dual;
++--------------------------------------------------------+
+| length(concat (upper("hello"),"world",upper("MYSql"))) |
++--------------------------------------------------------+
+|                                                     15 |
++--------------------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> select substr("helloworld",6,9);
++--------------------------+
+| substr("helloworld",6,9) |
++--------------------------+
+| world                    |
++--------------------------+
+1 row in set (0.00 sec)
+
+mysql> select substr("helloworld",6,3);
++--------------------------+
+| substr("helloworld",6,3) |
++--------------------------+
+| wor                      |
++--------------------------+
+1 row in set (0.00 sec)
+
+mysql> substr (String,position,number of characters)
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'substr (String,position,number of characters)' at line 1
+mysql> select substr("hello world",6,3);
++---------------------------+
+| substr("hello world",6,3) |
++---------------------------+
+|  wo                       |
++---------------------------+
+1 row in set (0.00 sec)
+
+mysql> select substr("hello world",3);
++-------------------------+
+| substr("hello world",3) |
++-------------------------+
+| llo world               |
++-------------------------+
+1 row in set (0.00 sec)
+
+mysql> select substr("slim fit jeans",6,3);
++------------------------------+
+| substr("slim fit jeans",6,3) |
++------------------------------+
+| fit                          |
++------------------------------+
+1 row in set (0.01 sec)
+
+mysql> select instr("tapacademy","p");
++-------------------------+
+| instr("tapacademy","p") |
++-------------------------+
+|                       3 |
++-------------------------+
+1 row in set (0.00 sec)
+
+mysql> select instr("tapacademy","pa");
++--------------------------+
+| instr("tapacademy","pa") |
++--------------------------+
+|                        3 |
++--------------------------+
+1 row in set (0.00 sec)
+
+mysql> select instr("tapacademy","a");
++-------------------------+
+| instr("tapacademy","a") |
++-------------------------+
+|                       2 |
++-------------------------+
+1 row in set (0.00 sec)
+
+mysql> select instr("tapacademy","%a");
++--------------------------+
+| instr("tapacademy","%a") |
++--------------------------+
+|                        0 |
++--------------------------+
+1 row in set (0.00 sec)
+
+mysql> select instr("tapacademy","ta");
++--------------------------+
+| instr("tapacademy","ta") |
++--------------------------+
+|                        1 |
++--------------------------+
+1 row in set (0.00 sec)
+
+mysql> select instr("tapacademy","%t");
++--------------------------+
+| instr("tapacademy","%t") |
++--------------------------+
+|                        0 |
++--------------------------+
+1 row in set (0.00 sec)
+
+mysql> select instr("tapacademy","t%");
++--------------------------+
+| instr("tapacademy","t%") |
++--------------------------+
+|                        0 |
++--------------------------+
+1 row in set (0.00 sec)
+
+mysql> select instr("tapacademy","%y");
++--------------------------+
+| instr("tapacademy","%y") |
++--------------------------+
+|                        0 |
++--------------------------+
+1 row in set (0.00 sec)
+
+mysql> instr(String,charcter)
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'instr(String,charcter)' at line 1
+mysql> select instr("apple","p);"
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> select instr("apple","p");
++--------------------+
+| instr("apple","p") |
++--------------------+
+|                  2 |
++--------------------+
+1 row in set (0.00 sec)
+
+mysql> select replace("tapacademy","tap","pavan");
++-------------------------------------+
+| replace("tapacademy","tap","pavan") |
++-------------------------------------+
+| pavanacademy                        |
++-------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> replace(String, old_string, new_string);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(String, old_string, new_string)' at line 1
+mysql> string funtions
+    -> upper()
+    -> lower()
+    -> concat()
+    -> length()
+    -> substr()
+    -> instr()
+    -> replace()
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'string funtions
+upper()
+lower()
+concat()
+length()
+substr()
+instr()
+replace()' at line 1
+mysql> select trim("pavan       academy")
+    -> ;
++-----------------------------+
+| trim("pavan       academy") |
++-----------------------------+
+| pavan       academy         |
++-----------------------------+
+1 row in set (0.00 sec)
+
+mysql> select trim(leading "m" from "madam");
++--------------------------------+
+| trim(leading "m" from "madam") |
++--------------------------------+
+| adam                           |
++--------------------------------+
+1 row in set (0.00 sec)
+
+mysql> select trim(trailing "m" from "madam");
++---------------------------------+
+| trim(trailing "m" from "madam") |
++---------------------------------+
+| mada                            |
++---------------------------------+
+1 row in set (0.00 sec)
+
+mysql> select trim(both "m" from "madam");
++-----------------------------+
+| trim(both "m" from "madam") |
++-----------------------------+
+| ada                         |
++-----------------------------+
+1 row in set (0.00 sec)
+
+mysql> select trim("                                                           pavan");
++--------------------------------------------------------------------------+
+| trim("                                                           pavan") |
++--------------------------------------------------------------------------+
+| pavan                                                                    |
++--------------------------------------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> select ltrim("     tap academy");
++---------------------------+
+| ltrim("     tap academy") |
++---------------------------+
+| tap academy               |
++---------------------------+
+1 row in set (0.00 sec)
+
+mysql> select rtrim("     tap academy");
++---------------------------+
+| rtrim("     tap academy") |
++---------------------------+
+|      tap academy          |
++---------------------------+
+1 row in set (0.00 sec)
+
+mysql> ///////////////////////math functions/////////////////////////////////
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '///////////////////////math functions/////////////////////////////////' at line 1
+mysql> 1.mod()
+    -> 2.round()
+    -> 3.truncate()
+    -> 4.ceil()
+    -> 5.floor()
+    -> /;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1.mod()
+2.round()
+3.truncate()
+4.ceil()
+5.floor()
+/' at line 1
+mysql> select mod(10,3);
++-----------+
+| mod(10,3) |
++-----------+
+|         1 |
++-----------+
+1 row in set (0.00 sec)
+
+mysql> mod(divident,divisor);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'mod(divident,divisor)' at line 1
+mysql> select round(1234.5684,2);
++--------------------+
+| round(1234.5684,2) |
++--------------------+
+|            1234.57 |
++--------------------+
+1 row in set (0.00 sec)
+
+mysql> select round(1234.5684,3);
++--------------------+
+| round(1234.5684,3) |
++--------------------+
+|           1234.568 |
++--------------------+
+1 row in set (0.00 sec)
+
+mysql> select round(1234.5684,1);
++--------------------+
+| round(1234.5684,1) |
++--------------------+
+|             1234.6 |
++--------------------+
+1 row in set (0.00 sec)
+
+mysql> select truncate (1234.569,-2);
++------------------------+
+| truncate (1234.569,-2) |
++------------------------+
+|                   1200 |
++------------------------+
+1 row in set (0.00 sec)
+
+mysql> select truncate (1284.569,-2);
++------------------------+
+| truncate (1284.569,-2) |
++------------------------+
+|                   1200 |
++------------------------+
+1 row in set (0.00 sec)
+
+mysql> select round(1284.569,-2);
++--------------------+
+| round(1284.569,-2) |
++--------------------+
+|               1300 |
++--------------------+
+1 row in set (0.00 sec)
+
+mysql> select round(1234.569,-2);
++--------------------+
+| round(1234.569,-2) |
++--------------------+
+|               1200 |
++--------------------+
+1 row in set (0.00 sec)
+
+mysql> date functions
+    -> cureentdate - curdate()
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'date functions
+cureentdate - curdate()' at line 1
+mysql> select curdate();
++------------+
+| curdate()  |
++------------+
+| 2026-05-11 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> select lastdate()
+    -> ;
+ERROR 1305 (42000): FUNCTION myntra.lastdate does not exist
+mysql> select now();
++---------------------+
+| now()               |
++---------------------+
+| 2026-05-11 17:47:46 |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql> select now();
++---------------------+
+| now()               |
++---------------------+
+| 2026-05-11 17:47:50 |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql> select now();
++---------------------+
+| now()               |
++---------------------+
+| 2026-05-11 17:47:50 |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql> select now();
++---------------------+
+| now()               |
++---------------------+
+| 2026-05-11 17:47:51 |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql> select now();
++---------------------+
+| now()               |
++---------------------+
+| 2026-05-11 17:47:52 |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql> select now();
++---------------------+
+| now()               |
++---------------------+
+| 2026-05-11 17:47:53 |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql> select now();
++---------------------+
+| now()               |
++---------------------+
+| 2026-05-11 17:47:54 |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql> select now();
++---------------------+
+| now()               |
++---------------------+
+| 2026-05-11 17:47:55 |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql> select now();
++---------------------+
+| now()               |
++---------------------+
+| 2026-05-11 17:47:56 |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql> select now();
++---------------------+
+| now()               |
++---------------------+
+| 2026-05-11 17:47:56 |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql> Pavan now();
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Pavan now()' at line 1
+mysql> select day();
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+mysql> select day(2026-05-11);
++-----------------+
+| day(2026-05-11) |
++-----------------+
+|            NULL |
++-----------------+
+1 row in set, 1 warning (0.00 sec)
+
+mysql> select day("2026-05-11");
++-------------------+
+| day("2026-05-11") |
++-------------------+
+|                11 |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> select month("2026-05-11");
++---------------------+
+| month("2026-05-11") |
++---------------------+
+|                   5 |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql> select year("2026-05-11");
++--------------------+
+| year("2026-05-11") |
++--------------------+
+|               2026 |
++--------------------+
+1 row in set (0.00 sec)
+
+mysql> select year("20-05-11");
++------------------+
+| year("20-05-11") |
++------------------+
+|             2020 |
++------------------+
+1 row in set (0.00 sec)
+
+mysql> select year("202-05-11");
++-------------------+
+| year("202-05-11") |
++-------------------+
+|               202 |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> select datediff("25-03-2005","25-03-2026");
++-------------------------------------+
+| datediff("25-03-2005","25-03-2026") |
++-------------------------------------+
+|                                NULL |
++-------------------------------------+
+1 row in set, 2 warnings (0.00 sec)
+
+mysql> select datediff("2005-03-25","2026-03-25");
++-------------------------------------+
+| datediff("2005-03-25","2026-03-25") |
++-------------------------------------+
+|                               -7670 |
++-------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> select datediff(""2026-03-25","25-03-2005");
+    "> ;
+    "> ;^X^C
+mysql> select datediff("2026-03-25","25-03-2005");
++-------------------------------------+
+| datediff("2026-03-25","25-03-2005") |
++-------------------------------------+
+|                                NULL |
++-------------------------------------+
+1 row in set, 1 warning (0.00 sec)
+
+mysql> select datediff("2026-03-25","2005-03-25");
++-------------------------------------+
+| datediff("2026-03-25","2005-03-25") |
++-------------------------------------+
+|                                7670 |
++-------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> select datediff("2026-03-25","2005-05-11");
++-------------------------------------+
+| datediff("2026-03-25","2005-05-11") |
++-------------------------------------+
+|                                7623 |
++-------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> select dtae_add("2026-05-11 17:47:56",Interval 1 second);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+mysql> select dtae_add("2026-05-11 17:47:56",interval 1 second);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+mysql> select dtae_add("2025-05-11 17:47:56",interval 1 second);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+mysql> select date_add("2025-05-11 17:47:56",interval 1 second);
++---------------------------------------------------+
+| date_add("2025-05-11 17:47:56",interval 1 second) |
++---------------------------------------------------+
+| 2025-05-11 17:47:57                               |
++---------------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> select date_add("2025-05-11 17:47:56",interval 1 year);
++-------------------------------------------------+
+| date_add("2025-05-11 17:47:56",interval 1 year) |
++-------------------------------------------------+
+| 2026-05-11 17:47:56                             |
++-------------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> select date_add("2025-05-11 17:47:56",interval 10 year);
++--------------------------------------------------+
+| date_add("2025-05-11 17:47:56",interval 10 year) |
++--------------------------------------------------+
+| 2035-05-11 17:47:56                              |
++--------------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> select date_add("2025-05-11 17:47:56",interval 10000 year);
++-----------------------------------------------------+
+| date_add("2025-05-11 17:47:56",interval 10000 year) |
++-----------------------------------------------------+
+| NULL                                                |
++-----------------------------------------------------+
+1 row in set, 1 warning (0.00 sec)
+
+mysql> select date_add("2025-05-11 17:47:56",interval 1000 year);
++----------------------------------------------------+
+| date_add("2025-05-11 17:47:56",interval 1000 year) |
++----------------------------------------------------+
+| 3025-05-11 17:47:56                                |
++----------------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> select date_add(now(),interval 1000 year);
++------------------------------------+
+| date_add(now(),interval 1000 year) |
++------------------------------------+
+| 3026-05-11 18:00:28                |
++------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> select date_add(now(),interval -10 year);
++-----------------------------------+
+| date_add(now(),interval -10 year) |
++-----------------------------------+
+| 2016-05-11 18:00:39               |
++-----------------------------------+
+1 row in set (0.00 sec)
+
+mysql> select date_add(curdate(),interval -10 year);
++---------------------------------------+
+| date_add(curdate(),interval -10 year) |
++---------------------------------------+
+| 2016-05-11                            |
++---------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> select datediff("2004-03-01","2005-03-25");
++-------------------------------------+
+| datediff("2004-03-01","2005-03-25") |
++-------------------------------------+
+|                                -389 |
++-------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> select datediff("2004-03-01","2005-03-25");
++-------------------------------------+
+| datediff("2004-03-01","2005-03-25") |
++-------------------------------------+
+|                                -389 |
++-------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> select last_day(now());
++-----------------+
+| last_day(now()) |
++-----------------+
+| 2026-05-31      |
++-----------------+
+1 row in set (0.00 sec)
+
+mysql> select last_day(now(),interval 1 month);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+mysql> select last_day(now());
++-----------------+
+| last_day(now()) |
++-----------------+
+| 2026-05-31      |
++-----------------+
+1 row in set (0.00 sec)
+
+mysql> select timestampdiff(curdate(),"2000-12-12","2026-05-11");
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'curdate(),"2000-12-12","2026-05-11")' at line 1
+mysql> select timestampdiff(day,"2000-12-12","2026-05-11");
++----------------------------------------------+
+| timestampdiff(day,"2000-12-12","2026-05-11") |
++----------------------------------------------+
+|                                         9281 |
++----------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> select timestampdiff(day,"2005-03-25","2026-05-11");
++----------------------------------------------+
+| timestampdiff(day,"2005-03-25","2026-05-11") |
++----------------------------------------------+
+|                                         7717 |
++----------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> select timestampdiff(month,"2005-03-25","2026-05-11");
++------------------------------------------------+
+| timestampdiff(month,"2005-03-25","2026-05-11") |
++------------------------------------------------+
+|                                            253 |
++------------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> select timestampdiff(year,"2005-03-25","2026-05-11");
++-----------------------------------------------+
+| timestampdiff(year,"2005-03-25","2026-05-11") |
++-----------------------------------------------+
+|                                            21 |
++-----------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> select timestampdiff(seconds,"2005-03-25","2026-05-11");
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'seconds,"2005-03-25","2026-05-11")' at line 1
+mysql> select timestampdiff(second,"2005-03-25","2026-05-11");
++-------------------------------------------------+
+| timestampdiff(second,"2005-03-25","2026-05-11") |
++-------------------------------------------------+
+|                                       666748800 |
++-------------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> select extract(second from datetime);
+ERROR 1054 (42S22): Unknown column 'datetime' in 'field list'
+mysql> select extract(second from "2026-03-2026");
++-------------------------------------+
+| extract(second from "2026-03-2026") |
++-------------------------------------+
+|                                  26 |
++-------------------------------------+
+1 row in set, 1 warning (0.00 sec)
+
+mysql> select extract(second from now);
+ERROR 1054 (42S22): Unknown column 'now' in 'field list'
+mysql> select extract(second from now());
++----------------------------+
+| extract(second from now()) |
++----------------------------+
+|                         11 |
++----------------------------+
+1 row in set (0.00 sec)
+
+mysql> select extract(second from now());
++----------------------------+
+| extract(second from now()) |
++----------------------------+
+|                         15 |
++----------------------------+
+1 row in set (0.00 sec)
+
+mysql> select extract(second from now());
++----------------------------+
+| extract(second from now()) |
++----------------------------+
+|                         16 |
++----------------------------+
+1 row in set (0.00 sec)
+
+mysql> select extract(second from now());
++----------------------------+
+| extract(second from now()) |
++----------------------------+
+|                         16 |
++----------------------------+
+1 row in set (0.00 sec)
+
+mysql> select extract(second from now());
++----------------------------+
+| extract(second from now()) |
++----------------------------+
+|                         17 |
++----------------------------+
+1 row in set (0.00 sec)
+
+mysql> select extract(second from now());
++----------------------------+
+| extract(second from now()) |
++----------------------------+
+|                         18 |
++----------------------------+
+1 row in set (0.00 sec)
+
+mysql> select extract(second from now());
++----------------------------+
+| extract(second from now()) |
++----------------------------+
+|                         18 |
++----------------------------+
+1 row in set (0.00 sec)
+
+mysql>
+mysql> select extract(second from now());
++----------------------------+
+| extract(second from now()) |
++----------------------------+
+|                         20 |
++----------------------------+
+1 row in set (0.00 sec)
+
+mysql> select extract(second from now());
++----------------------------+
+| extract(second from now()) |
++----------------------------+
+|                         22 |
++----------------------------+
+1 row in set (0.00 sec)
+
+mysql> select extract(second from now());
++----------------------------+
+| extract(second from now()) |
++----------------------------+
+|                         24 |
++----------------------------+
+1 row in set (0.00 sec)
+
+mysql> select extract(second from now());
++----------------------------+
+| extract(second from now()) |
++----------------------------+
+|                         26 |
++----------------------------+
+1 row in set (0.00 sec)
+
+mysql> select extract(day from now());
++-------------------------+
+| extract(day from now()) |
++-------------------------+
+|                      11 |
++-------------------------+
+1 row in set (0.00 sec)
+
+mysql> select extract(hour from now());
++--------------------------+
+| extract(hour from now()) |
++--------------------------+
+|                       18 |
++--------------------------+
+1 row in set (0.00 sec)
+
+mysql> select extract(hour from hour());
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '))' at line 1
+mysql> select extract(hour from curdate());
++------------------------------+
+| extract(hour from curdate()) |
++------------------------------+
+|                            0 |
++------------------------------+
+1 row in set (0.00 sec)
+
+mysql>
